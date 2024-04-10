@@ -99,15 +99,21 @@ repositories {
     }
     maven {
         name 'Tencao Maven'
-        url 'https://maven.tencao.com/repository/releases/'
+        url 'https://amp.tencao.com/repository/releases/'
     }
     maven {
         name 'Tencao Maven'
-        url 'https://maven.tencao.com/repository/releases/'
+        url 'https://amp.tencao.com/repository/releases/'
     }
     maven {
         name 'Bluexin'
         url 'https://maven.bluexin.be/repository/releases/'
+    }
+    maven {
+        url 'https://maven.cleanroommc.com'
+    }
+    maven {
+        url = "https://maven.bluexin.be/repository/releases/be/bluexin/"
     }
     flatDir {
         dirs 'libs'
@@ -130,8 +136,8 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
 
     // implementation "net.shadowfacts:Forgelin:${forgelin_version}"
-    implementation 'io.github.chaosunity:forgelin:1.7.20.0'
-    implementation ('com.tencao:saomclib:1.12.2-1.4.11') { changing = true }
+    implementation 'io.github.chaosunity.forgelin:Forgelin-Continuous:1.9.23.0'
+    implementation files('libs/saomclib-1.12-1.1.jar')
     shadow 'be.bluexin.gnu.jel:gnu-jel:2.1.3'
     shadow 'com.helger:ph-css:6.5.0'
     shadow 'com.helger.commons:ph-commons:10.1.6'
@@ -178,6 +184,8 @@ jar {
 
     finalizedBy 'reobfJar'
 }
+
+
 
 
 tasks.withType(Copy).configureEach {
